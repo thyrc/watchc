@@ -1,0 +1,34 @@
+= Watch and Command
+
+Watch for file modification & execute a command if an IN_CLOSE_WRITE event is emitted and the first line is a valid TOTP.
+
+```shell
+watchc -w /tmp/watch.me --password secret --command ":ps -uf"
+```
+
+```
+echo -n "secret" |bash watch.sh |tee /tmp/watch.me
+```
+
+```shell
+$ watchc --help
+Execute command on FILE modification
+
+Usage: watchc -w <FILE> -c <COMMAND>
+
+Options:
+  -w, --watch <FILE>        Watch <FILE> for modification
+  -c, --command <COMMAND>   Execute <COMMAND> on watch odification
+
+  -p, --password <PASS>     Set TOTP secret to <PASS>
+  -f, --passfile <FILE>     Set TOTP secret from first line in <FILE>
+  -q, --quiet               Do not print command outputs
+  -n, --no-password         Don't check for TOTP in watch
+  -h, --help                Print help
+  -V, --version             Print version
+```
+
+== Notes
+Linux only (inotify, with all its limitations and caveats)
+
+Commands are exectuted a shell via `sh -c`, inherit the current process’s environment and working directory.

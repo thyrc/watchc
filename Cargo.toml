@@ -1,0 +1,24 @@
+[package]
+name = "watchc"
+version = "0.1.0"
+authors = ["thyrc <thyrc@users.noreply.github.com>"]
+description = "Execute command on file modification"
+edition = "2021"
+publish = false
+readme = "README.adoc"
+license = "MIT"
+keywords = ["cli", "shell"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+inotify = "0.11.0"
+lexopt = "0.3.0"
+totp-lite = "2.0.1"
+
+[profile.release]
+opt-level = "z"
+panic = "abort"
+codegen-units = 1
+lto = true
+debug = false
+strip = "symbols"
