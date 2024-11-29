@@ -3,7 +3,7 @@
 Watch for file modification & execute a command if an IN_CLOSE_WRITE event is emitted and the first line is a valid TOTP.
 
 ```shell
-watchc -w /tmp/watch.me --password secret --command ":ps -uf"
+watchc -w /tmp/watch.me --password secret --command "ps -uf"
 ```
 
 ```
