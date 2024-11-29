@@ -16,7 +16,7 @@ Usage: watchc -w <FILE> -c <COMMAND>
 
 Options:
   -w, --watch <FILE>        Watch <FILE> for modification
-  -c, --command <COMMAND>   Execute <COMMAND> on watch odification
+  -c, --command <COMMAND>   Execute <COMMAND> on watch modification
 
   -p, --password <PASS>     Set TOTP secret to <PASS>
   -f, --passfile <FILE>     Set TOTP secret from first line in <FILE>
